@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/ZTMowrer947/wv-help-4-teens/issues"
   },
-  "homepage": "https://github.com/ZTMowrer947/wv-help-4-teens#readme"
+  "homepage": "https://github.com/ZTMowrer947/wv-help-4-teens#readme",
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
 }
