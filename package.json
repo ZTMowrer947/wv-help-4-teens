@@ -33,8 +33,11 @@
         "@babel/plugin-proposal-class-properties": "^7.5.5",
         "@babel/preset-env": "^7.6.0",
         "@babel/preset-typescript": "^7.6.0",
+        "@types/koa": "^2.0.49",
+        "@types/node": "^12.7.5",
         "babel-plugin-transform-typescript-metadata": "^0.2.2",
         "core-js": "3",
+        "koa": "^2.8.1",
         "regenerator-runtime": "^0.13.3"
     }
 }
