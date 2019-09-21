@@ -1,0 +1,18 @@
+{
+  "name": "wv-help-4-teens",
+  "version": "1.0.0",
+  "description": "WV Help4Teens: A resource site for WV teens",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZTMowrer947/wv-help-4-teens.git"
+  },
+  "author": "Zackery Mowrer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZTMowrer947/wv-help-4-teens/issues"
+  },
+  "homepage": "https://github.com/ZTMowrer947/wv-help-4-teens#readme"
+}
