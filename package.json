@@ -16,6 +16,12 @@
     },
     "homepage": "https://github.com/ZTMowrer947/wv-help-4-teens#readme",
     "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^2.3.0",
+        "@typescript-eslint/parser": "^2.3.0",
+        "eslint": "6.x",
+        "eslint-config-prettier": "^6.3.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-prettier": "^3.1.1",
         "prettier": "^1.18.2",
         "typescript": "3.6.x"
     }
