@@ -1,0 +1,12 @@
+{
+    "restartable": "rs",
+    "ignore": [".git", "./node_modules/**"],
+    "watch": ["src"],
+    "verbose": false,
+    "env": {
+        "PORT": 5000,
+        "NODE_ENV": "development"
+    },
+    "exec": "babel-node --extensions '.ts' src",
+    "ext": "ts"
+}
