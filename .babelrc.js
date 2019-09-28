@@ -11,8 +11,11 @@ module.exports = api => {
                 // Use builtins based on usage
                 useBuiltIns: "usage",
 
-                // Target current nodejs version
-                node: "current",
+                // Target
+                targets: {
+                    // Target current nodejs version
+                    node: "current",
+                },
 
                 // Use core-js 3
                 corejs: 3,
