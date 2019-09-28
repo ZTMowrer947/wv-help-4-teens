@@ -16,6 +16,7 @@
     },
     "homepage": "https://github.com/ZTMowrer947/wv-help-4-teens#readme",
     "devDependencies": {
+        "@babel/node": "^7.6.2",
         "@babel/plugin-transform-runtime": "^7.6.0",
         "@babel/runtime": "^7.6.0",
         "@typescript-eslint/eslint-plugin": "^2.3.0",
