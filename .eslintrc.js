@@ -20,6 +20,7 @@ module.exports = {
     // Environment
     env: {
         node: true,
+        browser: true,
         es6: true,
     },
 
@@ -35,4 +36,16 @@ module.exports = {
 
         "import/order": ["error"],
     },
+
+    // Rule overrides
+    overrides: [
+        {
+            // JavaScript files
+            files: ["*.js"],
+            rules: {
+                // Disable rules that shouldn't apply to ES5 JS files
+                "@typescript-eslint/no-var-requires": ["off"],
+            },
+        },
+    ],
 };
