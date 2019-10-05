@@ -11,12 +11,16 @@ const app = new Koa();
 
 // Middleware
 app.use(logger());
-app.use(mount("/public", serveStatic(path.resolve("..", "public"))));
 app.use(
-    views(path.resolve("..", "views"), {
+    views(path.resolve(__dirname, "..", "views"), {
         extension: "pug",
     })
 );
+app.use(mount("/public", serveStatic(path.resolve(__dirname, "..", "public"))));
+
+app.use(async ctx => {
+    await ctx.render("index");
+});
 
 // Export
 export default app;
