@@ -6,6 +6,7 @@ import mount from "koa-mount";
 import serveStatic from "koa-static";
 import views from "koa-views";
 import env, { EnvironmentType } from "../env";
+import router from "./routes";
 
 // App setup
 const app = new Koa();
@@ -32,9 +33,9 @@ app.use(
 // Serve static assets from /public
 app.use(mount("/public", serveStatic(path.resolve(rootPath, "public"))));
 
-app.use(async ctx => {
-    await ctx.render("index");
-});
+// Routes
+app.use(router.routes());
+app.use(router.allowedMethods());
 
 // Export
 export default app;
