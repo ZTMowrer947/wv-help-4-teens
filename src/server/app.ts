@@ -87,14 +87,24 @@ const rootPath = path.resolve(__dirname, "..", "..");
             .filter(asset => asset.js)
             .map(asset => asset.js);
 
+        const scriptHashes = organizedAssets
+            .filter(asset => asset.jsIntegrity)
+            .map(asset => asset.jsIntegrity);
+
         const styles = organizedAssets
             .filter(asset => asset.css)
             .map(asset => asset.css);
 
+        const styleHashes = organizedAssets
+            .filter(asset => asset.cssIntegrity)
+            .map(asset => asset.cssIntegrity);
+
         // Attach paths to context state
         ctx.state = {
             scripts,
+            scriptHashes,
             styles,
+            styleHashes,
         };
 
         // Continue middleware chain
