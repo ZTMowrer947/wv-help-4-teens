@@ -12,10 +12,7 @@ import router from "./routes";
 const app = new Koa();
 
 // Base path
-const rootPath =
-    env === EnvironmentType.Production
-        ? path.resolve(__dirname, "..")
-        : path.resolve(__dirname, "..", "..");
+const rootPath = path.resolve(__dirname, "..", "..");
 
 // Middleware
 
