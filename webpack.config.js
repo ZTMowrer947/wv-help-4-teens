@@ -1,6 +1,7 @@
 // Imports
 const path = require("path");
 const AssetsPlugin = require("assets-webpack-plugin");
+const ExtractCSSChunksWebpackPlugin = require("extract-css-chunks-webpack-plugin");
 const SriPlugin = require("webpack-subresource-integrity");
 
 // Base path
@@ -12,6 +13,22 @@ const environment = process.env.NODE_ENV === "production" ? "prod" : "dev";
 
 // Plugins
 const plugins = [
+    new ExtractCSSChunksWebpackPlugin({
+        filename: path.join(
+            "styles",
+            environment === "prod"
+                ? "[name].[contenthash].css"
+                : "[name].bundle.css"
+        ),
+
+        chunkFilenames: path.join(
+            "styles",
+            environment === "prod"
+                ? "[id].[contenthash].css"
+                : "[id].bundle.css"
+        ),
+    }),
+
     new AssetsPlugin({
         keepInMemory: environment === "dev",
         filename: "assets.json",
@@ -46,6 +63,11 @@ const webpackConfig = {
                 : "[name].bundle.js"
         ),
 
+        chunkFilename: path.join(
+            "scripts",
+            environment === "prod" ? "[id].[contenthash].js" : "[id].bundle.js"
+        ),
+
         // Path
         path: path.resolve(basePath, "public"),
 
@@ -67,6 +89,36 @@ const webpackConfig = {
                 options: {
                     cacheDirectory: true,
                 },
+            },
+            {
+                test: /\.s(a|c)ss?$/,
+                use: [
+                    {
+                        loader: ExtractCSSChunksWebpackPlugin.loader,
+                        options: {
+                            hot: environment === "dev",
+                        },
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    "resolve-url-loader",
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                ],
             },
             {
                 enforce: "pre",
