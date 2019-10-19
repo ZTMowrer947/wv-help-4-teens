@@ -11,6 +11,12 @@ module.exports = api => {
                 // Use builtins based on usage
                 useBuiltIns: "usage",
 
+                // Target
+                targets: {
+                    // Target current nodejs version
+                    node: "current",
+                },
+
                 // Use core-js 3
                 corejs: 3,
             },
@@ -29,7 +35,7 @@ module.exports = api => {
         "babel-plugin-transform-typescript-metadata",
 
         // Dynamic Imports
-        "@babel/plugin-syntax-dynamic-import",
+        "babel-plugin-dynamic-import-node-babel-7",
     ];
 
     // If not in production, transform babel runtime
