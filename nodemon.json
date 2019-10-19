@@ -7,6 +7,6 @@
         "PORT": 5000,
         "NODE_ENV": "development"
     },
-    "exec": "babel-node --extensions '.ts' src/server",
+    "exec": "babel-node --extensions '.ts' --config-file './src/server/.babelrc.js' src/server",
     "ext": "ts"
 }
