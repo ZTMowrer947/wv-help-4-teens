@@ -2,7 +2,7 @@
 const gulp = require("gulp");
 const sm = require("gulp-sourcemaps");
 const babel = require("gulp-babel");
-const uglify = require("gulp-uglify");
+const terser = require("gulp-terser");
 const webpack = require("webpack");
 const webpackStream = require("webpack-stream");
 const webpackConfig = require("./webpack.config");
@@ -19,7 +19,7 @@ const buildServer = () => {
         .src(paths.server, { base: "src" })
         .pipe(sm.init())
         .pipe(babel())
-        .pipe(uglify())
+        .pipe(terser())
         .pipe(sm.write("."))
         .pipe(gulp.dest("dist"));
 };
