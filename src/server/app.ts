@@ -30,8 +30,29 @@ app.use(
     })
 );
 
-// Serve static assets from /public
-app.use(mount("/public", serveStatic(path.resolve(rootPath, "public"))));
+(async () => {
+    // If the environment is in development mode,
+    if (env === EnvironmentType.Development) {
+        // Import webpack packages
+        const { default: koaWebpack } = await import("koa-webpack");
+        const { default: webpack } = await import("webpack");
+        const { default: webpackConfig } = await import("../../webpack.config");
+
+        // Configure webpack compiler
+        const compiler = webpack(webpackConfig);
+
+        // Setup middleware
+        const middleware = await koaWebpack({ compiler });
+
+        // Apply middleware
+        app.use(middleware);
+    } else {
+        // Serve static assets from /public
+        app.use(
+            mount("/public", serveStatic(path.resolve(rootPath, "public")))
+        );
+    }
+})();
 
 // Routes
 app.use(router.routes());
