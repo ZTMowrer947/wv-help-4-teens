@@ -1,5 +1,6 @@
 // Imports
 const path = require("path");
+const AssetsPlugin = require("assets-webpack-plugin");
 
 // Base path
 const basePath = path.resolve(__dirname);
@@ -9,7 +10,13 @@ const sourcePath = path.resolve(__dirname, "src", "client");
 const environment = process.env.NODE_ENV === "production" ? "prod" : "dev";
 
 // Plugins
-const plugins = [];
+const plugins = [
+    new AssetsPlugin({
+        keepInMemory: environment === "dev",
+        filename: "assets.json",
+        useCompilerPath: true,
+    }),
+];
 
 // Configuration
 /**
