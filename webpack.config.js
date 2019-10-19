@@ -20,9 +20,7 @@ const webpackConfig = {
     mode: environment === "prod" ? "production" : "development",
 
     // Entry point
-    entry: {
-        app: path.resolve(sourcePath, "index.ts"),
-    },
+    entry: [path.resolve(sourcePath, "index.ts")],
 
     // Output
     output: {
