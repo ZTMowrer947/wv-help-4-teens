@@ -3,6 +3,7 @@ doctype html
 html(lang="en")
     include partials/head
     body
+        include partials/header
         block content
         each js, index in scripts
             if scriptHashes[index]
