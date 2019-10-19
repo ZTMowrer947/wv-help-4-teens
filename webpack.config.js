@@ -1,6 +1,7 @@
 // Imports
 const path = require("path");
 const AssetsPlugin = require("assets-webpack-plugin");
+const SriPlugin = require("webpack-subresource-integrity");
 
 // Base path
 const basePath = path.resolve(__dirname);
@@ -15,6 +16,12 @@ const plugins = [
         keepInMemory: environment === "dev",
         filename: "assets.json",
         useCompilerPath: true,
+        integrity: environment === "prod",
+    }),
+
+    new SriPlugin({
+        hashFuncNames: ["sha256", "sha384"],
+        enabled: environment === "prod",
     }),
 ];
 
@@ -44,6 +51,8 @@ const webpackConfig = {
 
         // Public path
         publicPath: "/public",
+
+        crossOriginLoading: environment === "prod" && "anonymous",
     },
 
     // Devtool
