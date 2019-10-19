@@ -3,6 +3,7 @@ const gulp = require("gulp");
 const sm = require("gulp-sourcemaps");
 const babel = require("gulp-babel");
 const terser = require("gulp-terser");
+const del = require("del");
 const webpack = require("webpack");
 const webpackStream = require("webpack-stream");
 const webpackConfig = require("./webpack.config");
@@ -35,7 +36,11 @@ const buildClient = () => {
 
 const build = gulp.parallel(buildServer, buildClient);
 
+const clean = () => del(["public", "dist"]);
+
 // Exports
 module.exports = {
     build,
+    clean,
+    default: gulp.series(clean, build),
 };
