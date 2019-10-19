@@ -66,10 +66,28 @@ const rootPath = path.resolve(__dirname, "..", "..");
             await next();
         });
     } else {
+        // Import fs module
+        const { default: fs } = await import("fs");
+
         // Serve static assets from /public
         app.use(
             mount("/public", serveStatic(path.resolve(rootPath, "public")))
         );
+
+        // Read assets file from public folder
+        app.use(async (ctx, next) => {
+            // Set path to asset file
+            const assetPath = path.resolve(rootPath, "public", "assets.json");
+
+            // Read and parse asset file
+            const assets = JSON.parse(fs.readFileSync(assetPath).toString());
+
+            // Attach assets to context state
+            ctx.state = assets;
+
+            // Continue middleware chain
+            await next();
+        });
     }
 
     app.use(async (ctx, next) => {
