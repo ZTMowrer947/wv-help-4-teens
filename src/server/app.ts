@@ -15,19 +15,18 @@ const app = new Koa();
 const rootPath = path.resolve(__dirname, "..", "..");
 
 // Middleware
-
-// Log out requests to this server
-app.use(logger());
-
-// Enable template engine functionality
-app.use(
-    views(path.resolve(rootPath, "views"), {
-        // Default to using Pug for templates
-        extension: "pug",
-    })
-);
-
 (async () => {
+    // Log out requests to this server
+    app.use(logger());
+
+    // Enable template engine functionality
+    app.use(
+        views(path.resolve(rootPath, "views"), {
+            // Default to using Pug for templates
+            extension: "pug",
+        })
+    );
+
     // If the environment is in development mode,
     if (env === EnvironmentType.Development) {
         // Import webpack packages
@@ -43,17 +42,69 @@ app.use(
 
         // Apply middleware
         app.use(middleware);
+
+        // Read asset data
+        app.use(async (ctx, next) => {
+            // Set path to asset file
+            const assetPath = path.resolve(
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                webpackConfig.output!.path!,
+                "assets.json"
+            );
+
+            // Read and parse asset file
+            const assets = JSON.parse(
+                middleware.devMiddleware.fileSystem
+                    .readFileSync(assetPath)
+                    .toString()
+            );
+
+            // Attach assets to context state
+            ctx.state = assets;
+
+            // Continue middleware chain
+            await next();
+        });
     } else {
         // Serve static assets from /public
         app.use(
             mount("/public", serveStatic(path.resolve(rootPath, "public")))
         );
     }
-})();
 
-// Routes
-app.use(router.routes());
-app.use(router.allowedMethods());
+    app.use(async (ctx, next) => {
+        // Get asset data from context state
+        const assets = ctx.state;
+
+        // Get and reorganize asset chunk names
+        let assetChunks = Object.keys(assets);
+        assetChunks = [...assetChunks.slice(1), assetChunks[0]];
+
+        const organizedAssets = assetChunks.map(chunk => assets[chunk]);
+
+        // Get script and style paths
+        const scripts = organizedAssets
+            .filter(asset => asset.js)
+            .map(asset => asset.js);
+
+        const styles = organizedAssets
+            .filter(asset => asset.css)
+            .map(asset => asset.css);
+
+        // Attach paths to context state
+        ctx.state = {
+            scripts,
+            styles,
+        };
+
+        // Continue middleware chain
+        await next();
+    });
+
+    // Routes
+    app.use(router.routes());
+    app.use(router.allowedMethods());
+})();
 
 // Export
 export default app;
