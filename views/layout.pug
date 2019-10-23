@@ -4,7 +4,8 @@ html(lang="en")
     include partials/head
     body.d-flex.flex-column
         include partials/header
-        block content
+        .container-fluid.flex-grow-1.flex-shrink-0
+            block content
         include partials/footer
         each js, index in scripts
             if scriptHashes[index]
