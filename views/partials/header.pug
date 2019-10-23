@@ -26,11 +26,5 @@ header
                     ) Topics
 
                     div.dropdown-menu(aria-labelledby="navbarDropdown")
-                        a.dropdown-item(href="#") Obesity
-                        a.dropdown-item(href="#") Bullying
-                        a.dropdown-item(href="#") Social Media
-                        a.dropdown-item(href="#") Peer Pressure
-                        a.dropdown-item(href="#") Depression
-                        a.dropdown-item(href="#") Anxiety
-                        a.dropdown-item(href="#") Addiction
-                        a.dropdown-item(href="#") Homelessness
+                        each topic in topics
+                            a.dropdown-item(href=`/topics/${topic.id}`)= topic.name
