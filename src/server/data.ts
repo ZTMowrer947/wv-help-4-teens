@@ -38,6 +38,41 @@ const topicData: Topic[] = [
             },
         ],
     },
+    {
+        id: "bullying",
+        name: "Bullying",
+        resources: [],
+    },
+    {
+        id: "social-media",
+        name: "Social Media",
+        resources: [],
+    },
+    {
+        id: "peer-pressure",
+        name: "Peer Pressure",
+        resources: [],
+    },
+    {
+        id: "depression",
+        name: "Depression",
+        resources: [],
+    },
+    {
+        id: "anxiety",
+        name: "Anxiety",
+        resources: [],
+    },
+    {
+        id: "addiction",
+        name: "Addiction",
+        resources: [],
+    },
+    {
+        id: "homelessness",
+        name: "Homelessness",
+        resources: [],
+    },
 ];
 
 // Export
