@@ -2,9 +2,10 @@ doctype html
 
 html(lang="en")
     include partials/head
-    body
+    body.d-flex.flex-column
         include partials/header
         block content
+        include partials/footer
         each js, index in scripts
             if scriptHashes[index]
                 script(type="application/javascript", src=js, integrity=scriptHashes[index], crossorigin="anonymous")
