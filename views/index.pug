@@ -1,4 +1,13 @@
 extends layout
 
 block content
-    h1 Hello, World!
+    .w-75.h-100.d-flex.flex-column.align-items-center.justify-content-center
+        h1.display-4 WV Help4Teens
+
+        p.lead Are you a WV teen struggling through issues such as depression or obesity?
+
+        p.
+            Here you will find collections of resources that can help you with issues of this kind.
+            We currently have resources for #{topics.length} different topics.
+
+        a.btn.btn-dark(href="/topics") Explore Available Topics
