@@ -27,6 +27,12 @@ router.get("/", async (ctx: ParameterizedContext<BaseState>) => {
     await ctx.render("index");
 });
 
+// GET /topics: Topic Listing
+router.get("/topics", async (ctx: ParameterizedContext<BaseState>) => {
+    // Render topic listing page
+    await ctx.render("topics");
+});
+
 // GET /topics/:id: Topic page
 router.get(
     "/topics/:id",
