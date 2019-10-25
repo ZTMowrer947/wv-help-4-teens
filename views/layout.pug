@@ -4,7 +4,7 @@ html(lang="en")
     include partials/head
     body.d-flex.flex-column
         include partials/header
-        .container-fluid.flex-grow-1.flex-shrink-0
+        .container-fluid.flex-grow-1.flex-shrink-0.d-flex.flex-column.align-items-center
             block content
         include partials/footer
         each js, index in scripts
