@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    h1.display-4.text-center.text-lg-right Resources for #{topic.name}
+    h1.display-4.text-center.text-lg-right.mb-5 Resources for #{topic.name}
     .w-75.d-flex.flex-column.align-items-center.justify-content-center
         ul.resources
             each resource in topic.resources
