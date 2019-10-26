@@ -6,6 +6,6 @@ block content
         ul.resources
             each resource in topic.resources
                 li
-                    a(href=resource.link)= resource.link
+                    a(href=resource.link, target="_blank", rel="noreferrer noopener")= resource.link
                     p= resource.description
             
