@@ -1,6 +1,7 @@
 // Imports
 const path = require("path");
 const AssetsPlugin = require("assets-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const ExtractCSSChunksWebpackPlugin = require("extract-css-chunks-webpack-plugin");
 const SriPlugin = require("webpack-subresource-integrity");
 
@@ -40,6 +41,13 @@ const plugins = [
         hashFuncNames: ["sha256", "sha384"],
         enabled: environment === "prod",
     }),
+
+    new CopyPlugin([
+        {
+            from: path.join(basePath, "src", "images"),
+            to: path.join(basePath, "public", "images"),
+        },
+    ]),
 ];
 
 // Configuration
