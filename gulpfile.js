@@ -3,6 +3,7 @@ const gulp = require("gulp");
 const sm = require("gulp-sourcemaps");
 const babel = require("gulp-babel");
 const terser = require("gulp-terser");
+const imagemin = require("gulp-imagemin");
 const del = require("del");
 const webpack = require("webpack");
 const webpackStream = require("webpack-stream");
@@ -12,6 +13,12 @@ const webpackConfig = require("./webpack.config");
 const paths = {
     server: ["src/server/**/*.ts", "src/*.ts"],
     client: ["src/client/index.ts"],
+    images: [
+        "src/images/**/*.png",
+        "src/images/**/*.jpg",
+        "src/images/**/*.gif",
+        "src/images/**/*.svg",
+    ],
 };
 
 // Tasks
@@ -25,7 +32,7 @@ const buildServer = () => {
         .pipe(gulp.dest("dist"));
 };
 
-const buildClient = () => {
+const buildWebpackClient = () => {
     return gulp
         .src(paths.client)
         .pipe(sm.init())
@@ -33,6 +40,15 @@ const buildClient = () => {
         .pipe(sm.write("."))
         .pipe(gulp.dest("public"));
 };
+
+const minifyImages = () => {
+    return gulp
+        .src(paths.images)
+        .pipe(imagemin())
+        .pipe(gulp.dest("public/images"));
+};
+
+const buildClient = gulp.series(buildWebpackClient, minifyImages);
 
 const build = gulp.parallel(buildServer, buildClient);
 
