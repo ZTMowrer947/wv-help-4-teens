@@ -6,6 +6,7 @@ import mount from "koa-mount";
 import serveStatic from "koa-static";
 import views from "koa-views";
 import env, { EnvironmentType } from "../env";
+import errorHandler from "./middleware/errorHandler";
 import router from "./routes";
 
 // App setup
@@ -26,6 +27,9 @@ const rootPath = path.resolve(__dirname, "..", "..");
             extension: "pug",
         })
     );
+
+    // Handle errors
+    app.use(errorHandler);
 
     // If the environment is in development mode,
     if (env === EnvironmentType.Development) {
