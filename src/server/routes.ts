@@ -40,14 +40,20 @@ router.get(
         ctx: ParameterizedContext<TopicState, RouterContext<TopicState>>,
         next
     ) => {
+        // Attempt to get topic data
         const topic = await ctx.state.topicService.getTopicById(ctx.params.id);
 
+        // If topic was found,
         if (topic) {
             // Attach topic to context state
             ctx.state.topic = topic;
 
             // Continue middleware chain
             await next();
+        } else {
+            // Otherwise, throw 404 error
+            ctx.status = 404;
+            throw new Error(`Topic with ID "${ctx.params.id}" not found.`);
         }
     },
     async (ctx: ParameterizedContext<TopicState>) => {
@@ -55,6 +61,12 @@ router.get(
         await ctx.render("topic");
     }
 );
+
+// Throw 404 error for all other routes
+router.all("*", async ctx => {
+    ctx.status = 404;
+    throw new Error(`No route exists for path ${ctx.path}.`);
+});
 
 // Export
 export default router;
