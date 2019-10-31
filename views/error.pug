@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    .w-75.h-100.d-flex.flex-column.align-items-center.justify-content-center
+        h1= `${status} ${statusText}`
+
+        if isDev
+            pre= error.stack
+        else if status == 404
+            p The requested resource could not be found.
+        else
+            p Sorry, an unexpected error occurred.
+
+        a.btn.btn-dark(href="/") Return to home page
+            
