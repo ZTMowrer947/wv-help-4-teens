@@ -136,6 +136,12 @@ const rootPath = path.resolve(__dirname, "..", "..");
     // Routes
     app.use(router.routes());
     app.use(router.allowedMethods());
+
+    // Global error handler
+    app.on("error", (error: Error) => {
+        // Log error stack trace
+        console.log(error.stack);
+    });
 })();
 
 // Export
