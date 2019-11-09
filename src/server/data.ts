@@ -144,6 +144,11 @@ const topicData: Topic[] = [
                     "https://www.addicted.org/directory/category/putnam-county-5.html",
                 description: "",
             },
+            {
+                link:
+                    "https://www.rehabcenter.net/teen-rehab-centers/west-virginia-teen-rehab-centers/",
+                description: "",
+            },
         ],
     },
     {
@@ -158,11 +163,6 @@ const topicData: Topic[] = [
             {
                 link:
                     "http://wvde.state.wv.us/federal-programs/documents/OpeningDoorsinWVPlan-FINAL-lowres.pdf",
-                description: "",
-            },
-            {
-                link:
-                    "https://www.rehabcenter.net/teen-rehab-centers/west-virginia-teen-rehab-centers/",
                 description: "",
             },
         ],
