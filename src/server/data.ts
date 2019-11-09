@@ -99,6 +99,11 @@ const topicData: Topic[] = [
                     "https://www.sageday.com/blog/peer-pressure-and-depression-in-teenagers",
                 description: "",
             },
+            {
+                link:
+                    "https://teendriving.aaa.com/WV/teens/going-solo/key-points-for-safe-driving/peer-pressure/",
+                description: "",
+            },
         ],
     },
     {
