@@ -159,6 +159,10 @@ const webpackConfig = {
             },
         },
     },
+
+    resolveLoader: {
+        modules: [path.resolve(__dirname, "node_modules")],
+    },
 };
 
 // Export
