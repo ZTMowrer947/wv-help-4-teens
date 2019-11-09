@@ -4,7 +4,8 @@
     "description": "WV Help4Teens: A resource site for WV teens",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon"
+        "start": "nodemon",
+        "build": "NODE_ENV=production gulp"
     },
     "repository": {
         "type": "git",
