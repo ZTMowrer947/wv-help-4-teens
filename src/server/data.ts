@@ -24,7 +24,8 @@ const topicData: Topic[] = [
             },
             {
                 link: "https://www.camc.org/weightloss",
-                description: "",
+                description:
+                    "A resource by CAMC that offers tips and resources for losing weight.",
             },
             {
                 link: "https://www.stateofobesity.org/states/wv/",
