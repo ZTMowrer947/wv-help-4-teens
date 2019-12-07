@@ -44,28 +44,27 @@ const topicData: Topic[] = [
         resources: [
             {
                 link:
-                    "https://www.bdtonline.com/news/survey-ranks-west-virginia-rd-overall-for-bullying-problems/article_81d9a866-65bb-11e6-8af6-4f1cf2fe6deb.html",
-                description: "",
-            },
-            {
-                link:
                     "https://www.cybersmile.org/advice-help/category/who-to-call",
-                description: "",
+                description:
+                    "A collection of various helplines both inside and outside the United States.",
             },
             {
                 link:
                     "https://www.mhanational.org/bullying-what-do-if-im-bullied",
-                description: "",
+                description:
+                    "A list of steps to consider if you are being bullied.",
             },
             {
                 link:
                     "https://www.stopbullying.gov/kids/what-you-can-do/index.html",
-                description: "",
+                description:
+                    "A resource detailing what one can do if they are being bullied.",
             },
             {
                 link:
                     "https://www.helpguide.org/articles/abuse/bullying-and-cyberbullying.htm",
-                description: "",
+                description:
+                    "An article that defines bullying and cyberbullying, as well as providing tips on dealing with bullying.",
             },
         ],
     },
@@ -76,17 +75,20 @@ const topicData: Topic[] = [
             {
                 link:
                     "https://sysomos.com/2016/10/27/can-social-media-affect-health",
-                description: "",
+                description:
+                    "An article about what effects social media can have on one's health.",
             },
             {
                 link:
                     "https://www.creditdonkey.com/negative-effects-social-media.html",
-                description: "",
+                description:
+                    "An article about social media and the effects it has on teens, and how to balance its use.",
             },
             {
                 link:
                     "https://childmind.org/article/is-social-media-use-causing-depression/",
-                description: "",
+                description:
+                    "An article about social media and depression, as well as how to avoid its negative effects.",
             },
         ],
     },
@@ -97,12 +99,14 @@ const topicData: Topic[] = [
             {
                 link:
                     "https://www.sageday.com/blog/peer-pressure-and-depression-in-teenagers",
-                description: "",
+                description:
+                    "A blog post about identify peer pressure and depression in teenagers",
             },
             {
                 link:
                     "https://teendriving.aaa.com/WV/teens/going-solo/key-points-for-safe-driving/peer-pressure/",
-                description: "",
+                description:
+                    "A list of tips to help teens with peer pressure, specifically in terms of driving.",
             },
         ],
     },
@@ -147,12 +151,12 @@ const topicData: Topic[] = [
             {
                 link:
                     "https://www.addicted.org/directory/category/putnam-county-5.html",
-                description: "",
+                description: "(limited in location)", // We should replace this one
             },
             {
                 link:
                     "https://www.rehabcenter.net/teen-rehab-centers/west-virginia-teen-rehab-centers/",
-                description: "",
+                description: "A list of treatment centers in West Virgina.",
             },
         ],
     },
@@ -165,11 +169,7 @@ const topicData: Topic[] = [
                     "https://www.wvgazettemail.com/flipside/flipside_news/teen-homelessness-is-a-major-problem-that-needs-addressed-flipside/article_8ec410dc-eb00-5aa3-96d7-bd3f828fe265.html",
                 description: "",
             },
-            {
-                link:
-                    "http://wvde.state.wv.us/federal-programs/documents/OpeningDoorsinWVPlan-FINAL-lowres.pdf",
-                description: "",
-            },
+            // We need more homelessness links
         ],
     },
 ];
