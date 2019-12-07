@@ -1,6 +1,7 @@
 // Types
 export interface Resource {
     link: string;
+    displayName?: string;
     description: string;
 }
 
@@ -43,6 +44,17 @@ const topicData: Topic[] = [
         id: "bullying",
         name: "Bullying",
         resources: [
+            {
+                link: "https://www.thehotline.org/",
+                description:
+                    "The website of the National Domestic Violence Hotline.",
+            },
+            {
+                link: "tel:8007997233",
+                displayName: "(800) 799-7233",
+                description:
+                    "The phone number of the National Domestic Violence Hotline.",
+            },
             {
                 link:
                     "https://www.cybersmile.org/advice-help/category/who-to-call",
