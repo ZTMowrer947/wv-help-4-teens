@@ -165,11 +165,22 @@ const topicData: Topic[] = [
         name: "Homelessness",
         resources: [
             {
+                link: "https://www.hud.gov/states/west_virginia/homeless",
+                description:
+                    "A resource by WV Housing and Urban Development containing other resources for homelessness in West Virginia.",
+            },
+            {
+                link:
+                    "https://www.homelessshelterdirectory.org/westvirginia.html",
+                description:
+                    "A resource listing shelters for homelessness people in West Virginia.",
+            },
+            {
                 link:
                     "https://www.wvgazettemail.com/flipside/flipside_news/teen-homelessness-is-a-major-problem-that-needs-addressed-flipside/article_8ec410dc-eb00-5aa3-96d7-bd3f828fe265.html",
-                description: "",
+                description:
+                    "A Flipside article containing figures about teen homelessness and why it is a major issue.",
             },
-            // We need more homelessness links
         ],
     },
 ];
