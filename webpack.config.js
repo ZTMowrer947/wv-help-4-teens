@@ -44,9 +44,14 @@ const plugins = [
 ];
 
 if (environment === "dev") {
-    plugins.push(new CopyPlugin([
-        { from: path.resolve(basePath, "src", "images"), to: path.resolve(basePath, "dist", "client", "images")}
-    ]))
+    plugins.push(
+        new CopyPlugin([
+            {
+                from: path.resolve(basePath, "src", "images"),
+                to: path.resolve(basePath, "dist", "client", "images"),
+            },
+        ])
+    );
 }
 
 // Configuration
