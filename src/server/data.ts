@@ -128,6 +128,15 @@ const topicData: Topic[] = [
         name: "Depression",
         resources: [
             {
+                link: "http://www.suicidepreventionhotline.org",
+                description: "The website of the Suicide Prevention Hotline.",
+            },
+            {
+                link: "tel:+18002738255",
+                displayName: "1-800-273-TALK (8255)",
+                description: "The phone number of the Suicide Prevention Hotline."
+            },
+            {
                 link: "https://www.verywellmind.com/depression-4157261",
                 description:
                     "A resource with a comprehensive set of articles about the causes, symptoms, and treatment of depression.",
@@ -163,8 +172,8 @@ const topicData: Topic[] = [
         resources: [
             {
                 link:
-                    "https://www.addicted.org/directory/category/putnam-county-5.html",
-                description: "(limited in location)", // We should replace this one
+                    "http://help4wv.com/",
+                description: "Resources for addiction in West Virginia. (NOTE: This resource is in no way affiliated with WV Help4Teens.)", // We should replace this one
             },
             {
                 link:
