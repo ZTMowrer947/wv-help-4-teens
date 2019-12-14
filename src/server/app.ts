@@ -1,6 +1,7 @@
 // Imports
 import path from "path";
 import Koa from "koa";
+import helmet from "koa-helmet";
 import logger from "koa-logger";
 import mount from "koa-mount";
 import serveStatic from "koa-static";
@@ -30,6 +31,37 @@ const rootPath = path.resolve(__dirname, "..", "..");
 
     // Handle errors
     app.use(errorHandler);
+
+    // Helmet security measures
+    app.use(
+        helmet({
+            // Disable HSTS
+            hsts: false,
+
+            // Set Content Security Policy only in production
+            contentSecurityPolicy:
+                env === EnvironmentType.Production
+                    ? {
+                          directives: {
+                              // By default, only allow assets from inside the site and those requested via HTTPS
+                              defaultSrc: ["'self'", "https:"],
+
+                              // Block any object item
+                              objectSrc: ["'none'"],
+
+                              // Require SRI for scripts and styles
+                              requireSriFor: ["script", "style"],
+                          },
+                      }
+                    : false,
+
+            // Referer policy
+            referrerPolicy: {
+                // Set policy to same-origin
+                policy: "same-origin",
+            },
+        })
+    );
 
     // If the environment is in development mode,
     if (env === EnvironmentType.Development) {
@@ -75,13 +107,13 @@ const rootPath = path.resolve(__dirname, "..", "..");
 
         // Serve static assets from /public
         app.use(
-            mount("/public", serveStatic(path.resolve(rootPath, "public")))
+            mount("/public", serveStatic(path.resolve(rootPath, "dist", "client")))
         );
 
         // Read assets file from public folder
         app.use(async (ctx, next) => {
             // Set path to asset file
-            const assetPath = path.resolve(rootPath, "public", "assets.json");
+            const assetPath = path.resolve(rootPath, "dist", "client", "assets.json");
 
             // Read and parse asset file
             const assets = JSON.parse(fs.readFileSync(assetPath).toString());
