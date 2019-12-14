@@ -75,11 +75,6 @@ const webpackConfig = {
                 : "[name].bundle.js"
         ),
 
-        chunkFilename: path.join(
-            "scripts",
-            environment === "prod" ? "[id].[contenthash].js" : "[id].bundle.js"
-        ),
-
         // Path
         path: path.resolve(basePath, "dist", "client"),
 
