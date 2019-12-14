@@ -1,6 +1,7 @@
 // Imports
 import path from "path";
 import Koa from "koa";
+import favicon from "koa-favicon";
 import helmet from "koa-helmet";
 import logger from "koa-logger";
 import mount from "koa-mount";
@@ -62,6 +63,9 @@ const rootPath = path.resolve(__dirname, "..", "..");
             },
         })
     );
+
+    // Serve favicon
+    app.use(favicon(path.join(rootPath, "public", "favicon.ico")));
 
     // If the environment is in development mode,
     if (env === EnvironmentType.Development) {
