@@ -38,21 +38,21 @@ const buildWebpackClient = () => {
         .pipe(sm.init())
         .pipe(webpackStream(webpackConfig, webpack))
         .pipe(sm.write("."))
-        .pipe(gulp.dest("public"));
+        .pipe(gulp.dest("dist/client"));
 };
 
 const minifyImages = () => {
     return gulp
         .src(paths.images)
         .pipe(imagemin())
-        .pipe(gulp.dest("public/images"));
+        .pipe(gulp.dest("dist/client/images"));
 };
 
 const buildClient = gulp.series(buildWebpackClient, minifyImages);
 
 const build = gulp.parallel(buildServer, buildClient);
 
-const clean = () => del(["public", "dist"]);
+const clean = () => del(["dist"]);
 
 // Exports
 module.exports = {

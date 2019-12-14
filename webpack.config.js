@@ -41,13 +41,6 @@ const plugins = [
         hashFuncNames: ["sha256", "sha384"],
         enabled: environment === "prod",
     }),
-
-    new CopyPlugin([
-        {
-            from: path.join(basePath, "src", "images"),
-            to: path.join(basePath, "public", "images"),
-        },
-    ]),
 ];
 
 // Configuration
@@ -77,7 +70,7 @@ const webpackConfig = {
         ),
 
         // Path
-        path: path.resolve(basePath, "public"),
+        path: path.resolve(basePath, "dist", "client"),
 
         // Public path
         publicPath: "/public",
