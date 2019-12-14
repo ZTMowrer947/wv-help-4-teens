@@ -134,7 +134,8 @@ const topicData: Topic[] = [
             {
                 link: "tel:+18002738255",
                 displayName: "1-800-273-TALK (8255)",
-                description: "The phone number of the Suicide Prevention Hotline."
+                description:
+                    "The phone number of the Suicide Prevention Hotline.",
             },
             {
                 link: "https://www.verywellmind.com/depression-4157261",
@@ -171,9 +172,9 @@ const topicData: Topic[] = [
         name: "Addiction",
         resources: [
             {
-                link:
-                    "http://help4wv.com/",
-                description: "Resources for addiction in West Virginia. (NOTE: This resource is in no way affiliated with WV Help4Teens.)", // We should replace this one
+                link: "http://help4wv.com/",
+                description:
+                    "Resources for addiction in West Virginia. (NOTE: This resource is in no way affiliated with WV Help4Teens.)", // We should replace this one
             },
             {
                 link:

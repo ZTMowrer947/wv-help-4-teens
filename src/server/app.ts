@@ -107,13 +107,21 @@ const rootPath = path.resolve(__dirname, "..", "..");
 
         // Serve static assets from /public
         app.use(
-            mount("/public", serveStatic(path.resolve(rootPath, "dist", "client")))
+            mount(
+                "/public",
+                serveStatic(path.resolve(rootPath, "dist", "client"))
+            )
         );
 
         // Read assets file from public folder
         app.use(async (ctx, next) => {
             // Set path to asset file
-            const assetPath = path.resolve(rootPath, "dist", "client", "assets.json");
+            const assetPath = path.resolve(
+                rootPath,
+                "dist",
+                "client",
+                "assets.json"
+            );
 
             // Read and parse asset file
             const assets = JSON.parse(fs.readFileSync(assetPath).toString());
