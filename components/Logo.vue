@@ -23,6 +23,13 @@
         </g>
     </svg>
 </template>
+<script lang="ts">
+// Imports
+import Vue from 'vue';
+
+// Component
+export default Vue.extend({});
+</script>
 <style>
 .NuxtLogo {
     animation: 1s appear;
