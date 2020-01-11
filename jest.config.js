@@ -19,4 +19,5 @@ module.exports = {
         '<rootDir>/components/**/*.vue',
         '<rootDir>/pages/**/*.vue',
     ],
+    coverageReporters: ['json', 'text', 'lcovonly', 'clover'],
 };
