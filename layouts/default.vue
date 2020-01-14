@@ -1,7 +1,10 @@
 <template>
     <div class="h-100 d-flex flex-column">
         <Header />
-        <b-container class="flex-grow-1 flex-shrink-0">
+        <b-container
+            class="flex-grow-1 flex-shrink-0 d-flex flex-column align-items-center"
+            fluid
+        >
             <nuxt />
         </b-container>
         <Footer />
