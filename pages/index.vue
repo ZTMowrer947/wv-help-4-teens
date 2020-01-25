@@ -2,11 +2,7 @@
     <div
         class="w-75 h-100 d-flex flex-column align-items-center justify-content-center"
     >
-        <img
-            id="h4t-logo"
-            src="@/assets/images/h4t.png"
-            alt="Main WV Help4Teens Logo"
-        />
+        <img id="h4t-logo" src="/icon.png" alt="Main WV Help4Teens Logo" />
         <h1 class="display-4">WV Help4Teens</h1>
 
         <p class="lead">
