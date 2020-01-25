@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex flex-column align-items-center">
+    <div class="d-flex flex-column align-items-center h-100">
         <h1 class="display-4">Topic Listing</h1>
         <p class="mt-5">
             Please select one of the topic cards below to retrieve a list of
@@ -18,8 +18,9 @@
                     <nuxt-link
                         class="btn btn-dark btn-block my-2"
                         :to="`/topics/${topic.id}`"
-                        ><h5 class="card-title">{{ topic.name }}</h5></nuxt-link
                     >
+                        <h5 class="card-title">{{ topic.name }}</h5>
+                    </nuxt-link>
                 </div>
             </div>
         </div>
