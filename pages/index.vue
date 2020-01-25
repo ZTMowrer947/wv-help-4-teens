@@ -13,7 +13,7 @@
         <p>
             Here you will find collections of resources that can help you with
             issues of this kind. We currently have resources for
-            <!-- INSERT TOPIC LIST LENGTH HERE -->
+            {{ topicCount }}
             different topics.
         </p>
 
@@ -25,8 +25,19 @@
 
 <script lang="ts">
 // Imports
-import Vue from 'vue';
+import { Component, Vue } from 'vue-property-decorator';
+import TopicService from '../services/TopicService';
 
 // Component
-export default Vue.extend({});
+@Component({
+    async asyncData() {
+        const topics = await new TopicService().getList();
+
+        return { topicCount: topics.length };
+    },
+})
+class Index extends Vue {}
+
+// Export
+export default Index;
 </script>
