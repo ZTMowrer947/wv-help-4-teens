@@ -30,7 +30,7 @@
 <script lang="ts">
 // Imports
 import { Component, Vue } from 'vue-property-decorator';
-import TopicService from '../services/TopicService';
+import TopicService from '@/services/TopicService';
 
 // Component
 @Component({
