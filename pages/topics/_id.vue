@@ -1,5 +1,9 @@
 <template>
     <div class="h-100 w-100 d-flex flex-column align-items-center">
+        <div class="w-75 mt-5">
+            <nuxt-link to="/topics">&lt; Return to Topic Listing </nuxt-link>
+        </div>
+
         <img
             id="topic-logo"
             :src="require(`@/assets/images/${topic.id}.png`)"
@@ -33,6 +37,10 @@
                     <p>{{ resource.description }}</p>
                 </li>
             </ul>
+
+            <nuxt-link to="/topics" class="align-self-start">
+                &lt; Return to Topic Listing
+            </nuxt-link>
         </div>
     </div>
 </template>
