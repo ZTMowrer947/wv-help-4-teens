@@ -9,11 +9,15 @@
         <div
             class="w-75 h-100 d-flex flex-column align-items-center justify-content-center"
         >
-            <div class="row">
-                <div
+            <b-row>
+                <b-col
                     v-for="topic of topics"
                     :key="topic.id"
-                    class="col-12 col-sm-6 col-md-4 col-lg-3 topic"
+                    cols="12"
+                    sm="6"
+                    md="4"
+                    lg="3"
+                    class="topic"
                 >
                     <nuxt-link
                         class="btn btn-dark btn-block my-2"
@@ -21,8 +25,8 @@
                     >
                         <h5 class="card-title">{{ topic.name }}</h5>
                     </nuxt-link>
-                </div>
-            </div>
+                </b-col>
+            </b-row>
         </div>
     </div>
 </template>
