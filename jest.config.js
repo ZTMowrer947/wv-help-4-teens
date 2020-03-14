@@ -20,4 +20,8 @@ module.exports = {
         '<rootDir>/pages/**/*.vue',
     ],
     coverageReporters: ['json', 'text', 'lcovonly', 'clover'],
+    testMatch: [
+        '**/__tests__/**/*.[jt]s?(x)',
+        '**/?(*.)+(spec|test).[jt]s?(x)',
+    ],
 };
