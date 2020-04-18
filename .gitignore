@@ -91,3 +91,7 @@ sw.*
 
 # 1.x code
 old/
+
+# Firebase build output
+.firebase
+public

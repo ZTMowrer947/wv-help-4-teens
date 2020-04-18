@@ -1,5 +1,6 @@
 export default {
     mode: 'universal',
+    buildDir: 'functions/.nuxt',
     /*
      ** Headers of the page
      */
@@ -62,6 +63,7 @@ export default {
      ** Build configuration
      */
     build: {
+        extractCSS: true,
         /*
          ** You can extend webpack config here
          */
