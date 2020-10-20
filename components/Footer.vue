@@ -5,13 +5,7 @@
         <div
             class="d-flex flex-column flex-lg-row align-items-center justify-content-lg-around w-100 w-lg-75 text-center"
         >
-            <p>&copy; {{ currentYear }} West Virginia Coding Club</p>
-            <p>
-                Bugs or dead links? Contact
-                <a href="mailto:admin@wvhelp4teens.org">
-                    admin@wvhelp4teens.org
-                </a>
-            </p>
+            <p>Created by the West Virginia Coding Club</p>
         </div>
         <p class="mx-2 disclaimer">
             This web site and its agents make no promises, guarantees,
@@ -35,11 +29,7 @@
 import Vue from 'vue';
 
 // Component
-export default Vue.extend({
-    data: () => ({
-        currentYear: new Date().getFullYear(),
-    }),
-});
+export default Vue.extend({});
 </script>
 
 <style lang="scss" scoped>
