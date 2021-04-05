@@ -1,6 +1,8 @@
 export default {
-    mode: 'universal',
-    buildDir: 'functions/.nuxt',
+    target: 'static',
+    router: {
+        base: '/wv-help-4-teens/',
+    },
     /*
      ** Headers of the page
      */
@@ -67,6 +69,6 @@ export default {
         /*
          ** You can extend webpack config here
          */
-        extend(config, ctx) {},
+        // extend(config, ctx) {},
     },
 };
