@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{topicCount:8}],fetch:[],mutations:void 0});
