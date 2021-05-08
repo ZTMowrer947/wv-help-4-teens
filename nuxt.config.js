@@ -1,7 +1,7 @@
 export default {
     target: 'static',
     router: {
-        base: '/wv-help-4-teens/',
+        base: '/',
     },
     /*
      ** Headers of the page
@@ -24,7 +24,7 @@ export default {
             {
                 rel: 'icon',
                 type: 'image/x-icon',
-                href: '/wv-help-4-teens/favicon.ico',
+                href: '/favicon.ico',
             },
         ],
     },
